@@ -24,8 +24,15 @@ const createNewDJmon = function (form) {
   djmonListItem.classList.add('djmon-list-item');
 
   const name = document.createElement('h3');
-  name.textContent = form.name.value;
+  const nameValue = document.createTextNode(form.name.value);
+  const nameInnerText = document.createTextNode(form.name.parentElement.innerText);
+  name.appendChild(nameInnerText);
+  name.appendChild(nameValue);
+  // name.textContent = form.name.value;
+  // const nameValue = document.createTextNode(name)
+  //orm.name.innerText;
   djmonListItem.appendChild(name);
+
 
   const djmon = document.createElement('h4');
   djmon.textContent = form.djmontype.value;
