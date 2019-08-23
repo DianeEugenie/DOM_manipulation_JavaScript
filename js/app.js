@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#new-djmon-form');
   form.addEventListener('submit', handleNewItemForm);
 
-  // const emptyList = document.querySelector('#delete-all');
-  // emptyList.addEventListener('click', handleEmptyList)
+  const emptyList = document.querySelector('#delete-all');
+  emptyList.addEventListener('click', handleEmptyList)
 
 });
 
@@ -67,4 +67,9 @@ const createNewDJmon = function (form) {
   djmonListItem.appendChild(slipCue);
 
   return djmonListItem;
+}
+
+const handleEmptyList = function (event) {
+  const readingList = document.querySelector('#djmon-list');
+  readingList.innerHTML = '';
 }

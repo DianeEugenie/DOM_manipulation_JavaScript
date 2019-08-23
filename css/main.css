@@ -10,10 +10,10 @@ flex-wrap: wrap;
 }
 
 .djmon-list-item {
-  border: 1px solid #8AA4A9;
+  border: 1px solid #9B76AD;
   padding: 1em 2em;
-  box-shadow: inset 0 0 5px #4E6E74;
-  background-color: lightgrey;
+  box-shadow: inset 0 0 5px #625368;
+  background-color: #EBD5F6;
   display: flex;
   flex-direction: column;
   margin: 0.5em;
