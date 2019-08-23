@@ -56,27 +56,12 @@ const createNewDJmon = function (form) {
   const slipCueValue = document.createTextNode(`Slip-Cue Rating: ${form.slipcue.value}`);
   slipCue.appendChild(slipCueValue);
   djmonItemBody.appendChild(slipCue);
+  console.dir(form.slipcue.value);
 
   const venue = document.createElement('h4');
-  // get the radio buttons by name as they all have the same
-  // if (document.getElementsByName('venue').checked) {
-  //   const venueSelect = document.getElementByName('venue').value;
-  //   venue.appendChild(venueSelect);
-  //   console.log(venueSelect);
-  // };
-
   const venueSelected = document.querySelector('input[name="venue"]:checked').value;
   const venueValue = document.createTextNode(`Favorite Venue: ${venueSelected}`)
-  // console.dir(allVenues);
-  // for (let i = 0; i < allVenues.length; i++) {
-  //   if (allVenues[i].checked) {
-  //     const venueSelected = document.createTextNode(`${allVenues.input.value}`);
-      venue.appendChild(venueValue);
-  //     console.dir(allVenues[i].checked);
-  //   };
-  // };
-   // new try
-  // const venueValue = document.createElement(`Favorite Venue: ${'input[name="venue"]:checked.val()'}`)
+  venue.appendChild(venueValue);
   djmonItemBody.appendChild(venue)
 
   djmonListItem.appendChild(djmonItemBody);

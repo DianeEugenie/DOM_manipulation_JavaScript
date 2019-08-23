@@ -9,6 +9,10 @@
   <title>Gotta Catch 'em All!</title>
 </head>
 <body>
+
+  <!-- <header>HELLO</header> -->
+
+  <main>
   <form id="new-djmon-form">
     <div id="form-wrapper">
       <div class="form-item">
@@ -34,43 +38,49 @@
 
       <div class="form-item">
         <label for="backspin" class="primary">Back Spin Rating (1 to 10):</label>
-        <input type="number" min="0" max="10" id="backspin" required />
+        <input type="number" min="1" max="10" value="1" id="backspin" required />
       </div>
       <div class="form-item">
         <label for="beatjuggle" class="primary">Beat Juggle Rating (1 to 10):</label>
-        <input type="number" min="0" max="10" id="beatjuggle" required />
+        <input type="number" min="1" max="10" value="1" id="beatjuggle" required />
       </div>
       <div class="form-item">
         <label for="scratching" class="primary">Scratch Rating (1 to 10):</label>
-        <input type="number" min="0" max="10" id="scratching" required />
+        <input type="number" min="1" max="10" value="1" id="scratching" required />
       </div>
       <div class="form-item">
         <label for="slipcue" class="primary">Slip-Cue Rating (1 to 10):</label>
-        <input type="number" min="0" max="10" id="slipcue" required />
+        <input type="number" min="1" max="10" value="1" id="slipcue" required />
       </div>
-
       <div class="form-item">
         <p>Favorite Venue:</p>
-        <input type="radio" id="park" name="venue" value="Park" checked>
-        <label for="park">Park</label>
-        <input type="radio" id="club" name="venue" value="Club">
-        <label for="club">Club</label>
-        <input type="radio" id="dungeon" name="venue" value="Dungeon">
-        <label for="dungeon">Dungeon</label>
+        <div class="form-item-radio">
+          <input type="radio" id="park" name="venue" value="Park" checked>
+          <label for="park">Park</label>
+          <input type="radio" id="club" name="venue" value="Club">
+          <label for="club">Club</label>
+          <input type="radio" id="dungeon" name="venue" value="Dungeon">
+          <label for="dungeon">Dungeon</label>
+        </div>
       </div>
 
-      <input type="submit" value="Save DJmon" />
+
     </div>
+
+    <input type="submit" value="Save DJmon" />
 
 
   </form>
 
 
+  <div class="list-body">
+    <h1>All the DJ-mons!</h1>
+    <div id="djmon-list"></div>
+  </div>
 
-  <h1>All the DJ-mons!</h1>
-  <div id="djmon-list"></div>
+ </main>
 
-  <button id="delete-all"> Clear List </button>
+<button id="delete-all"> Clear List </button>
 
 
 

@@ -1,9 +1,43 @@
 html {
   display: flex;
+  flex-direction: column;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+}
+
+main {
+  display: flex;
+  background-color: lightblue;
 }
 
 h4 {
   margin: 0.1em;
+}
+p {
+  margin: 0.1em;
+}
+
+
+#new-djmon-form {
+  display: flex;
+  flex-direction: column;
+
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2em;
+}
+
+
+#form-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 
 #djmon-list {
