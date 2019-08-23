@@ -24,13 +24,17 @@ p {
 #new-djmon-form {
   display: flex;
   flex-direction: column;
-
 }
+
 .form-item {
   display: flex;
   flex-direction: column;
   padding: 0.2em;
 }
+#park, #club, #dungeon, #rating {
+  cursor: pointer;
+}
+
 
 
 #form-wrapper {

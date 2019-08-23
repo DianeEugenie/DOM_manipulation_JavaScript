@@ -16,12 +16,12 @@
   <form id="new-djmon-form">
     <div id="form-wrapper">
       <div class="form-item">
-        <label for="name" class="primary">Name:</label>
+        <label for="name">Name:</label>
         <input type="text" id="name" required />
       </div>
 
       <div class="form-item">
-        <label for="djmontype" class="primary">DJ-mon Type</label>
+        <label for="djmontype">DJ-mon Type</label>
         <select id="djmontype">
           <option value="" disabled selected>What type is your DJ-mon?</option>
           <option value="Classical">Classical</option>
@@ -53,6 +53,10 @@
         <input type="number" min="1" max="10" value="1" id="slipcue" required />
       </div>
       <div class="form-item">
+        <label for="rating" class="primary">Awesomeness Level</label>
+        <input type="range" min="1" max="10" id="rating" value="5" required />
+      </div>
+      <div class="form-item">
         <p>Favorite Venue:</p>
         <div class="form-item-radio">
           <input type="radio" id="park" name="venue" value="Park" checked>
@@ -72,15 +76,17 @@
 
   </form>
 
+  </main>
+
 
   <div class="list-body">
     <h1>All the DJ-mons!</h1>
+    <button id="delete-all"> Clear List </button>
     <div id="djmon-list"></div>
+
   </div>
 
- </main>
 
-<button id="delete-all"> Clear List </button>
 
 
 

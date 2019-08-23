@@ -56,7 +56,12 @@ const createNewDJmon = function (form) {
   const slipCueValue = document.createTextNode(`Slip-Cue Rating: ${form.slipcue.value}`);
   slipCue.appendChild(slipCueValue);
   djmonItemBody.appendChild(slipCue);
-  console.dir(form.slipcue.value);
+
+  const rating = document.createElement('h4');
+  const ratingValue = document.createTextNode(`Awesomeness Level : ${form.rating.value}`);
+  rating.appendChild(ratingValue);
+  djmonItemBody.appendChild(rating);
+
 
   const venue = document.createElement('h4');
   const venueSelected = document.querySelector('input[name="venue"]:checked').value;
