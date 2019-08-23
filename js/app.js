@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript has loaded');
 
-  const form = document.querySelect('#new-djmon-form');
+  const form = document.querySelector('#new-djmon-form');
   form.addEventListener('submit', handleNewItemForm);
 
   // const emptyList = document.querySelector('#delete-all');
@@ -14,7 +14,7 @@ const handleNewItemForm = function(event) {
 
   const djmonListItem = createNewDJmon(event.target);
   const djmonList = document.querySelector('#djmon-list');
-  djmonList.appendChild(djmonListItem;
+  djmonList.appendChild(djmonListItem);
 
   event.target.reset();
 };
@@ -24,20 +24,28 @@ const createNewDJmon = function (form) {
   djmonListItem.classList.add('djmon-list-item');
 
   const name = document.createElement('h3');
-  name.tectContent = form.name.value;
+  name.textContent = form.name.value;
   djmonListItem.appendChild(name);
 
   const djmon = document.createElement('h4');
-  name.tectContent = form.name.value;
-  djmonListItem.appendChild(name);
-
-  const instrument = document.createElement('h4');
+  djmon.textContent = form.djmontype.value;
+  djmonListItem.appendChild(djmon);
 
   const backSpin = document.createElement('h4');
+  backSpin.textContent = form.backspin.value;
+  djmonListItem.appendChild(backSpin);
 
   const beatJuggle = document.createElement('h4');
+  beatJuggle.textContent = form.beatjuggle.value;
+  djmonListItem.appendChild(beatJuggle);
 
   const scratch = document.createElement('h4');
+  scratch.textContent = form.scratching.value;
+  djmonListItem.appendChild(scratch);
 
   const slipCue = document.createElement('h4');
+  slipCue.textContent = form.slipcue.value;
+  djmonListItem.appendChild(slipCue);
+
+  return djmonListItem;
 }
