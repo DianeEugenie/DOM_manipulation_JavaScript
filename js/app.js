@@ -23,48 +23,63 @@ const createNewDJmon = function (form) {
   const djmonListItem = document.createElement('div');
   djmonListItem.classList.add('djmon-list-item');
 
-  const name = document.createElement('h3');
-  const nameValue = document.createTextNode(form.name.value);
-  const nameInnerText = document.createTextNode(form.name.parentElement.innerText);
-  name.appendChild(nameInnerText);
-  name.appendChild(nameValue);
-  djmonListItem.appendChild(name);
+  const djmonItemBody = document.createElement('p');
+  djmonItemBody.classList.add('djmon-body-item');
+
+  const nameDjmon = document.createElement('h2');
+  const nameValue = document.createTextNode(`${form.name.value}`);
+  nameDjmon.appendChild(nameValue);
+  djmonListItem.appendChild(nameDjmon);
 
 
   const djmon = document.createElement('h4');
-  const djmonValue = document.createTextNode(form.djmontype.value);
-  const djmonInnerText = document.createTextNode(`DJ-mon Type: `);
-  djmon.appendChild(djmonInnerText);
+  const djmonValue = document.createTextNode(`DJ-mon Type: ${form.djmontype.value}`);
   djmon.appendChild(djmonValue);
-  djmonListItem.appendChild(djmon);
+  djmonItemBody.appendChild(djmon);
 
   const backSpin = document.createElement('h4');
-  const backSpinValue = document.createTextNode(form.backspin.value);
-  const backSpinInnerText = document.createTextNode(`Back Spin Rating: `);
-  backSpin.appendChild(backSpinInnerText);
+  const backSpinValue = document.createTextNode(`Back Spin Rating: ${form.backspin.value}`);
   backSpin.appendChild(backSpinValue);
-  djmonListItem.appendChild(backSpin);
+  djmonItemBody.appendChild(backSpin);
 
   const beatJuggle = document.createElement('h4');
-  const beatJuggleValue = document.createTextNode(form.beatjuggle.value);
-  const beatJuggleInnerText = document.createTextNode(`Beat Juggle Rating: `);
-  beatJuggle.appendChild(beatJuggleInnerText);
+  const beatJuggleValue = document.createTextNode(`Beat Juggle Rating: ${form.beatjuggle.value}`);
   beatJuggle.appendChild(beatJuggleValue);
-  djmonListItem.appendChild(beatJuggle);
+  djmonItemBody.appendChild(beatJuggle);
 
   const scratch = document.createElement('h4');
-  const scratchValue = document.createTextNode(form.scratching.value);
-  const scratchInnerText = document.createTextNode(`Scratch Rating: `);
-  scratch.appendChild(scratchInnerText);
+  const scratchValue = document.createTextNode(`Scratch Rating: ${form.scratching.value}`);
   scratch.appendChild(scratchValue);
-  djmonListItem.appendChild(scratch);
+  djmonItemBody.appendChild(scratch);
 
   const slipCue = document.createElement('h4');
-  const slipCueValue = document.createTextNode(form.slipcue.value);
-  const slipCueInnerText = document.createTextNode(`Slip-Cue Rating: `);
-  slipCue.appendChild(slipCueInnerText);
+  const slipCueValue = document.createTextNode(`Slip-Cue Rating: ${form.slipcue.value}`);
   slipCue.appendChild(slipCueValue);
-  djmonListItem.appendChild(slipCue);
+  djmonItemBody.appendChild(slipCue);
+
+  const venue = document.createElement('h4');
+  // get the radio buttons by name as they all have the same
+  // if (document.getElementsByName('venue').checked) {
+  //   const venueSelect = document.getElementByName('venue').value;
+  //   venue.appendChild(venueSelect);
+  //   console.log(venueSelect);
+  // };
+
+  const venueSelected = document.querySelector('input[name="venue"]:checked').value;
+  const venueValue = document.createTextNode(`Favorite Venue: ${venueSelected}`)
+  // console.dir(allVenues);
+  // for (let i = 0; i < allVenues.length; i++) {
+  //   if (allVenues[i].checked) {
+  //     const venueSelected = document.createTextNode(`${allVenues.input.value}`);
+      venue.appendChild(venueValue);
+  //     console.dir(allVenues[i].checked);
+  //   };
+  // };
+   // new try
+  // const venueValue = document.createElement(`Favorite Venue: ${'input[name="venue"]:checked.val()'}`)
+  djmonItemBody.appendChild(venue)
+
+  djmonListItem.appendChild(djmonItemBody);
 
   return djmonListItem;
 }

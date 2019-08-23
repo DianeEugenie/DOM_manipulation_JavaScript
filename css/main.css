@@ -2,6 +2,10 @@ html {
   display: flex;
 }
 
+h4 {
+  margin: 0.1em;
+}
+
 #djmon-list {
 display: flex;
 flex-direction: row;
@@ -10,12 +14,19 @@ flex-wrap: wrap;
 }
 
 .djmon-list-item {
-  border: 1px solid #9B76AD;
-  padding: 1em 2em;
-  box-shadow: inset 0 0 5px #625368;
-  background-color: #EBD5F6;
   display: flex;
   flex-direction: column;
-  margin: 0.5em;
-  border-radius: 15px;
+  border: 0.2em double #80745A;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-radius: 0.5em;
+  box-shadow: inset 0 0 1em #80745A;
+  margin: 0.3em;
+  padding: 1em 2em;
+  background-color: #DFCC9E;
+}
+
+.djmon-body-item {
+  display: flex;
+  flex-direction: column;
 }
