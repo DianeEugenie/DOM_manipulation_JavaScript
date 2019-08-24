@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.querySelector('#site-search');
   searchBar.addEventListener('input', searchSite);
 
+  const openForm = document.querySelector('#open-form');
+  openForm.addEventListener('click', handleOpenMenu);
+
 });
 
 const handleNewItemForm = function(event) {
@@ -134,4 +137,16 @@ const searchSite = function(event) {
     };
   };
 
+};
+
+const handleOpenMenu = function(event) {
+  const showMenu = document.querySelector('#new-djmon-form');
+  const menuId = event.target.parentElement.parentElement.children[1].children[0]
+  if (menuId.id === 'new-djmon-form') {
+    menuId.id = 'new-djmon-form-show';
+    event.target.innerText = 'Close DJ-mon Form';
+  } else {
+    menuId.id = 'new-djmon-form';
+    event.target.innerText = 'Open DJ-mon Form';
+  }
 };
