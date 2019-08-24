@@ -26,7 +26,7 @@
 
       <div class="form-item">
         <label for="djmontype">DJ-mon Type</label>
-        <select id="djmontype">
+        <select id="djmontype" required>
           <option value="" disabled selected>What type is your DJ-mon?</option>
           <option value="Classical">Classical</option>
           <option value="Country">Country</option>
@@ -79,6 +79,13 @@
 
 
   </form>
+
+  <form id="search-djmon">
+    <label for="site-search">Search the site:</label>
+    <input type="text" id="site-search" placeholder="Search By Name!"
+    aria-label="Search the site">
+  </form>
+
 
   </main>
 

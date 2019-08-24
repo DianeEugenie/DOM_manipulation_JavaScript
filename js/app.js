@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', handleNewItemForm);
 
   const emptyList = document.querySelector('#delete-all');
-  emptyList.addEventListener('click', handleEmptyList)
+  emptyList.addEventListener('click', handleEmptyList);
+
+  const searchBar = document.querySelector('#site-search');
+  searchBar.addEventListener('input', searchSite);
 
 });
 
@@ -27,7 +30,9 @@ const createNewDJmon = function (form) {
   djmonItemBody.classList.add('djmon-body-item');
 
   const nameDjmon = document.createElement('h2');
-  const nameValue = document.createTextNode(`${form.name.value}`);
+  const nameValue = document.createTextNode(`${form.name.value.toUpperCase()}`);
+  // djmonListItem.classList.add(`${form.name.value.toLowerCase()}`);
+
   nameDjmon.appendChild(nameValue);
   djmonListItem.appendChild(nameDjmon);
 
@@ -75,7 +80,7 @@ const createNewDJmon = function (form) {
 
   const newCheckBoxLabel = document.createElement('label');
   newCheckBoxLabel.classList.add('not-seen-it');
-  const newCheckBoxText = document.createTextNode(`Been There!`);
+  const newCheckBoxText = document.createTextNode(`Got the T-Shirt!`);
   newCheckBoxLabel.appendChild(newCheckBoxText);
 
   newCheckBox.addEventListener('change', handleCheckBox);
@@ -104,4 +109,29 @@ const handleCheckBox = function(event) {
 const handleEmptyList = function (event) {
   const readingList = document.querySelector('#djmon-list');
   readingList.innerHTML = '';
-}
+};
+
+// attempt at search function
+const searchSite = function(event) {
+  // get the value that is being typed in
+  let input = document.querySelector('#site-search');
+  const filter = input.value.toUpperCase();
+  // get the list
+  const list = document.querySelector('#djmon-list');
+  // get item of the list
+  const allItems = list.querySelector('.djmon-list-item');
+  let search;
+
+
+  if (allItems !== null) {
+
+  for (i = 0; i < allItems.length; i++) {
+    let search = allItems[i].innerText || allItems[i].textContent;
+    // console.dir(search);
+    if (search === input) {
+      allItems[i].classList.remove('hidden'); // changes display to none
+    } else {
+      allItems[i].classList.add('hidden');
+    }
+  };};
+};

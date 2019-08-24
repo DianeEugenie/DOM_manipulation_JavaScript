@@ -18,6 +18,7 @@ body {
 main {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 h1 {
@@ -25,6 +26,7 @@ h1 {
   text-align: center;
   background-color: rgba(251,236,251,0.9);
   border-radius: 0.5em;
+  font-size: 2.5em;
 
 }
 
@@ -37,12 +39,12 @@ p {
 }
 
 
-#new-djmon-form {
+#new-djmon-form, #search-djmon {
   display: flex;
   flex-direction: column;
   background-color: rgba(251,236,251,0.9);
   border-radius: 0.5em;
-  padding: 0.25em;
+  padding: 0.4em;
   border: 0.05em solid #C9A9C8;
 }
 
@@ -55,7 +57,9 @@ p {
   cursor: pointer;
 }
 
-
+#delete-all {
+  margin-bottom: 1.2em;
+}
 
 #form-wrapper {
   display: flex;
@@ -102,6 +106,10 @@ border-radius: 0.5em;
   visibility: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .seen-it {
   text-align: center;
   font-weight: bold;
@@ -123,12 +131,22 @@ button, .button {
   border-radius: 0.5em;
   color: #634963;
   font-family: 'Quicksand', sans-serif;
+  width: auto;
+  height: 1.5em;
+  box-shadow: 0.1em 0.15em #634963;
+  font-size: 1em;
+  margin-top: 0.5em;
 }
 
 button:active, .button:active {
-  transform: translateY(0.1em);
-  box-shadow: 0 0.1em #634963;
+  transform: translateY(0.15em);
+  box-shadow: 0 0 #634963;
   font-family: 'Quicksand', sans-serif;
+}
+
+button:hover, .button:hover {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #C9A9C8;
 }
 
 select {
