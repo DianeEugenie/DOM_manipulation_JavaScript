@@ -1,16 +1,27 @@
 html {
   display: flex;
   flex-direction: column;
+  background: url('images/background.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 body {
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
 }
 
 main {
   display: flex;
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  justify-content: space-between;
+}
+
+img {
+  display: flex;
+  justify-content: space-around;
 }
 
 h4 {
@@ -24,6 +35,8 @@ p {
 #new-djmon-form {
   display: flex;
   flex-direction: column;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 0.5em;
 }
 
 .form-item {
@@ -45,23 +58,52 @@ p {
 }
 
 #djmon-list {
+margin-top: 0.5em;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
 flex-wrap: wrap;
+background-color: rgba(251,236,251,0.9);
+border-radius: 0.5em;
+
 }
 
 .djmon-list-item {
   display: flex;
   flex-direction: column;
-  border: 0.2em double #80745A;
+  border: 0.2em double #8E658E;
   border-top-style: solid;
   border-bottom-style: solid;
   border-radius: 0.5em;
-  box-shadow: inset 0 0 1em #80745A;
+  box-shadow: inset 0 0 1em #8E658E;
   margin: 0.3em;
   padding: 1em 2em;
-  background-color: #DFCC9E;
+  background-color: #FFD8FF;
+}
+
+.djmon-list-item-checked {
+  display: flex;
+  flex-direction: column;
+  border: 0.2em double #8E658E;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-radius: 0.5em;
+  box-shadow: inset 0 0 1em #8E658E;
+  margin: 0.3em;
+  padding: 1em 2em;
+  background-color: #BD98BC;
+}
+
+.not-seen-it {
+  visibility: hidden;
+}
+
+.seen-it {
+  
+}
+
+.test {
+  display: flex;
 }
 
 .djmon-body-item {
