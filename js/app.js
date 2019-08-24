@@ -119,19 +119,19 @@ const searchSite = function(event) {
   // get the list
   const list = document.querySelector('#djmon-list');
   // get item of the list
-  const allItems = list.querySelector('.djmon-list-item');
+  const allItems = list.children;
   let search;
 
+// get all djmon list items
+  for (let i = 0; i < allItems.length; i++) {
+    let item = allItems[i];
+    let djmonName = allItems[i].childNodes[0].innerText;
 
-  if (allItems !== null) {
-
-  for (i = 0; i < allItems.length; i++) {
-    let search = allItems[i].innerText || allItems[i].textContent;
-    // console.dir(search);
-    if (search === input) {
-      allItems[i].classList.remove('hidden'); // changes display to none
+    if (djmonName.indexOf(filter) > -1) {
+      allItems[i].classList.remove('hidden');
     } else {
       allItems[i].classList.add('hidden');
-    }
-  };};
+    };
+  };
+
 };
