@@ -6,6 +6,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: #634963;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -15,14 +17,17 @@ body {
 
 main {
   display: flex;
-  /* background-color: lightblue; */
   justify-content: space-between;
 }
 
-img {
-  display: flex;
-  justify-content: space-around;
+h1 {
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  background-color: rgba(251,236,251,0.9);
+  border-radius: 0.5em;
+
 }
+
 
 h4 {
   margin: 0.1em;
@@ -35,8 +40,10 @@ p {
 #new-djmon-form {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(251,236,251,0.9);
   border-radius: 0.5em;
+  padding: 0.25em;
+  border: 0.05em solid #C9A9C8;
 }
 
 .form-item {
@@ -44,7 +51,7 @@ p {
   flex-direction: column;
   padding: 0.2em;
 }
-#park, #club, #dungeon, #rating {
+#park, #club, #dungeon, #rating, #checkbox, button, .button {
   cursor: pointer;
 }
 
@@ -53,8 +60,6 @@ p {
 #form-wrapper {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: space-between; */
 }
 
 #djmon-list {
@@ -65,7 +70,6 @@ justify-content: space-evenly;
 flex-wrap: wrap;
 background-color: rgba(251,236,251,0.9);
 border-radius: 0.5em;
-
 }
 
 .djmon-list-item {
@@ -100,6 +104,9 @@ border-radius: 0.5em;
 
 .seen-it {
   text-align: center;
+  font-weight: bold;
+  color: #FFD8FF;
+  text-shadow: 3px 4px 5px #634963;
 }
 
 .test {
@@ -112,6 +119,18 @@ border-radius: 0.5em;
 }
 
 button, .button {
-  border: 0.2em double #C9A9C8;
+  border: 0.1em solid #C9A9C8;
   border-radius: 0.5em;
+  color: #634963;
+  font-family: 'Quicksand', sans-serif;
+}
+
+button:active, .button:active {
+  transform: translateY(0.1em);
+  box-shadow: 0 0.1em #634963;
+  font-family: 'Quicksand', sans-serif;
+}
+
+select {
+  font-family: 'Quicksand', sans-serif;
 }

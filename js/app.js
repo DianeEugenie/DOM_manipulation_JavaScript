@@ -71,6 +71,7 @@ const createNewDJmon = function (form) {
 
   const newCheckBox = document.createElement('input');
   newCheckBox.type ='checkbox';
+  newCheckBox.id = 'checkbox'
 
   const newCheckBoxLabel = document.createElement('label');
   newCheckBoxLabel.classList.add('not-seen-it');
@@ -91,20 +92,13 @@ const createNewDJmon = function (form) {
 }
 
 const handleCheckBox = function(event) {
-  // const seenIt = document.querySelector('.djmon-list-item-checked');
-  // const notSeenIt = document.querySelector('.djmon-list-item');
-  const seenItText = document.querySelector('.seen-it');
-  const notSeenItText = document.querySelector('.not-seen-it');
-
   if (event.target.checked) {
     event.target.parentElement.className = 'djmon-list-item-checked';
     event.target.parentElement.lastChild.className = 'seen-it'
-
   } else {
     event.target.parentElement.className = 'djmon-list-item';
     event.target.parentElement.lastChild.className = 'not-seen-it'
   }
-
 };
 
 const handleEmptyList = function (event) {
