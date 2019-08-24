@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   searchBar.addEventListener('input', searchSite);
 
   const openForm = document.querySelector('#open-form');
-  openForm.addEventListener('click', handleOpenMenu);
+  openForm.addEventListener('click', handleOpenForm);
 
 });
 
@@ -25,75 +25,62 @@ const handleNewItemForm = function(event) {
   event.target.reset();
 };
 
+const addNewElement = function(element, text) {
+  entry = document.createElement(element);
+  entryText = document.createTextNode(text);
+  entry.appendChild(entryText);
+
+  return entry;
+};
+
+// takes in an array of elements
+const appendNewElements = function(elements, parent) {
+  for (var i = 0; i < elements.length; i++) {
+    parent.appendChild(elements[i]);
+  };
+};
+
+
 const createNewDJmon = function (form) {
   const djmonListItem = document.createElement('div');
   djmonListItem.classList.add('djmon-list-item');
 
   const djmonItemBody = document.createElement('p');
   djmonItemBody.classList.add('djmon-body-item');
+// Name of the entry
+  const nameDjmon = addNewElement('h2',`${form.name.value.toUpperCase()}`);
+// Body of the entry
 
-  const nameDjmon = document.createElement('h2');
-  const nameValue = document.createTextNode(`${form.name.value.toUpperCase()}`);
-  // djmonListItem.classList.add(`${form.name.value.toLowerCase()}`);
+  const djmon = addNewElement('h4',`DJ-mon Type: ${form.djmontype.value}`);
 
-  nameDjmon.appendChild(nameValue);
-  djmonListItem.appendChild(nameDjmon);
+  const backSpin = addNewElement('h4',`Back Spin Rating: ${form.backspin.value}`);
 
+  const beatJuggle = addNewElement('h4', `Beat Juggle Rating: ${form.beatjuggle.value}`);
 
-  const djmon = document.createElement('h4');
-  const djmonValue = document.createTextNode(`DJ-mon Type: ${form.djmontype.value}`);
-  djmon.appendChild(djmonValue);
-  djmonItemBody.appendChild(djmon);
+  const scratch = addNewElement('h4', `Scratch Rating: ${form.scratching.value}`);
 
-  const backSpin = document.createElement('h4');
-  const backSpinValue = document.createTextNode(`Back Spin Rating: ${form.backspin.value}`);
-  backSpin.appendChild(backSpinValue);
-  djmonItemBody.appendChild(backSpin);
+  const slipCue = addNewElement('h4', `Slip-Cue Rating: ${form.slipcue.value}`);
 
-  const beatJuggle = document.createElement('h4');
-  const beatJuggleValue = document.createTextNode(`Beat Juggle Rating: ${form.beatjuggle.value}`);
-  beatJuggle.appendChild(beatJuggleValue);
-  djmonItemBody.appendChild(beatJuggle);
+  const rating = addNewElement('h4', `Awesomeness Level : ${form.rating.value}`);
 
-  const scratch = document.createElement('h4');
-  const scratchValue = document.createTextNode(`Scratch Rating: ${form.scratching.value}`);
-  scratch.appendChild(scratchValue);
-  djmonItemBody.appendChild(scratch);
-
-  const slipCue = document.createElement('h4');
-  const slipCueValue = document.createTextNode(`Slip-Cue Rating: ${form.slipcue.value}`);
-  slipCue.appendChild(slipCueValue);
-  djmonItemBody.appendChild(slipCue);
-
-  const rating = document.createElement('h4');
-  const ratingValue = document.createTextNode(`Awesomeness Level : ${form.rating.value}`);
-  rating.appendChild(ratingValue);
-  djmonItemBody.appendChild(rating);
-
-
-  const venue = document.createElement('h4');
   const venueSelected = document.querySelector('input[name="venue"]:checked').value;
-  const venueValue = document.createTextNode(`Favorite Venue: ${venueSelected}`)
-  venue.appendChild(venueValue);
-  djmonItemBody.appendChild(venue)
+  const venue = addNewElement('h4', `Favorite Venue: ${venueSelected}`);
 
-  const newCheckBox = document.createElement('input');
-  newCheckBox.type ='checkbox';
-  newCheckBox.id = 'checkbox'
-
-  const newCheckBoxLabel = document.createElement('label');
-  newCheckBoxLabel.classList.add('not-seen-it');
-  const newCheckBoxText = document.createTextNode(`Got the T-Shirt!`);
-  newCheckBoxLabel.appendChild(newCheckBoxText);
-
-  newCheckBox.addEventListener('change', handleCheckBox);
+  const seenCheckBox = document.createElement('input');
+  seenCheckBox.type ='checkbox';
+  seenCheckBox.id = 'checkbox';
 
 
 
-  djmonListItem.appendChild(djmonItemBody);
-  djmonListItem.appendChild(newCheckBox);
-  djmonListItem.appendChild(newCheckBoxLabel);
+  const labelCheckBox = addNewElement('label', `Got the T-Shirt!`);
+  labelCheckBox.classList.add('not-seen-it');
 
+  seenCheckBox.addEventListener('change', handleCheckBox);
+
+
+  const appendBody = appendNewElements([djmon, backSpin, beatJuggle, scratch, slipCue, rating, venue], djmonItemBody);
+
+  appendNewElements([nameDjmon, djmonItemBody, seenCheckBox, labelCheckBox], djmonListItem)
 
 
   return djmonListItem;
@@ -139,14 +126,13 @@ const searchSite = function(event) {
 
 };
 
-const handleOpenMenu = function(event) {
-  const showMenu = document.querySelector('#new-djmon-form');
-  const menuId = event.target.parentElement.parentElement.children[1].children[0]
-  if (menuId.id === 'new-djmon-form') {
-    menuId.id = 'new-djmon-form-show';
+const handleOpenForm = function(event) {
+  const formId = event.target.parentElement.parentElement.children[1].children[0]
+  if (formId.id === 'new-djmon-form') {
+    formId.id = 'new-djmon-form-show';
     event.target.innerText = 'Close DJ-mon Form';
   } else {
-    menuId.id = 'new-djmon-form';
+    formId.id = 'new-djmon-form';
     event.target.innerText = 'Open DJ-mon Form';
   }
 };
