@@ -99,7 +99,7 @@ border-radius: 0.5em;
 }
 
 .seen-it {
-  
+  text-align: center;
 }
 
 .test {
@@ -109,4 +109,9 @@ border-radius: 0.5em;
 .djmon-body-item {
   display: flex;
   flex-direction: column;
+}
+
+button, .button {
+  border: 0.2em double #C9A9C8;
+  border-radius: 0.5em;
 }
