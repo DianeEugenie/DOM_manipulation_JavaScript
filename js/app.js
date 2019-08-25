@@ -69,13 +69,14 @@ const createNewDJmon = function (form) {
 
   const rating = addNewElement('h4', `Awesomeness Level : ${form.rating.value}`);
 
+  const venueSelected = document.querySelector('input[name="venue"]:checked').value;
+  const venue = addNewElement('h4', `Favorite Venue: ${venueSelected}`);
+
   const totalSum = (parseInt(`${form.backspin.value}`) + parseInt(`${form.beatjuggle.value}`) + parseInt(`${form.scratching.value}`) + parseInt(`${form.slipcue.value}`) +
   parseInt(`${form.rating.value}`));
 
   const totalRatings = addNewElement('h4', `Total Rating : ${totalSum}`);
-
-  const venueSelected = document.querySelector('input[name="venue"]:checked').value;
-  const venue = addNewElement('h4', `Favorite Venue: ${venueSelected}`);
+  totalRatings.classList.add('bold');
 
   const seenCheckBox = document.createElement('input');
   seenCheckBox.type ='checkbox';
@@ -86,10 +87,8 @@ const createNewDJmon = function (form) {
 // add event listener to the checkbox
   seenCheckBox.addEventListener('change', handleCheckBox);
 
-
-
 // list of elements to be appended to the body
-  const appendBody = appendNewElements([djmon, backSpin, beatJuggle, scratch, slipCue, rating, totalRatings, venue], djmonItemBody);
+  const appendBody = appendNewElements([djmon, backSpin, beatJuggle, scratch, slipCue, rating, venue, totalRatings], djmonItemBody);
 
 // list of elements to be appended to the full list item
   appendNewElements([nameDjmon, djmonItemBody, seenCheckBox, labelCheckBox], djmonListItem)
@@ -161,7 +160,7 @@ const sortSite = function(event) {
 
     case this[3].value:
       const thirdSort = [].slice.call(allItems).sort((item1, item2) => {
-        return parseInt(item2.children[1].children[6].textContent.slice(-2)) - parseInt(item1.children[1].children[6].textContent.slice(-2))
+        return parseInt(item2.children[1].children[7].textContent.slice(-2)) - parseInt(item1.children[1].children[7].textContent.slice(-2))
       }).map(item => list.appendChild(item));
 
     break;
@@ -169,7 +168,7 @@ const sortSite = function(event) {
     case this[4].value:
 
       const fourthSort = [].slice.call(allItems).sort((item1, item2) => {
-        return parseInt(item1.children[1].children[6].textContent.slice(-2)) - parseInt(item2.children[1].children[6].textContent.slice(-2))
+        return parseInt(item1.children[1].children[7].textContent.slice(-2)) - parseInt(item2.children[1].children[7].textContent.slice(-2))
       }).map(item =>list.appendChild(item));
     break;
 
