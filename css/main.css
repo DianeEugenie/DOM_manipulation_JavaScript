@@ -1,3 +1,4 @@
+/* Main Body */
 html {
   display: flex;
   flex-direction: column;
@@ -15,17 +16,14 @@ body {
   flex-direction: column;
 }
 
-
-label {
-  margin-bottom: 0.2em;
-}
-
 main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
+/* Headers */
 
 h1 {
   font-family: 'Monoton', cursive;
@@ -42,17 +40,25 @@ h2 {
   text-align: center;
 }
 
-
 h4, p {
   margin: 0.1em;
 }
 
-.bold {
-  border: 0.05em solid #C9A9C8;
-  border-radius: 0.5em;
-  padding: 0.1em;
+/* Footer */
+
+footer {
+  font-size: 0.5em;
 }
 
+a {
+  text-decoration: none;
+  color: #634963;
+}
+
+a:hover {
+  text-shadow: 0 0 2px #5A2E5B;
+}
+/* Form */
 
 #new-djmon-form, #search-djmon, #open-form {
   display: flex;
@@ -63,24 +69,29 @@ h4, p {
   border: 0.05em solid #C9A9C8;
 }
 
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-item {
   display: flex;
   flex-direction: column;
   padding: 0.2em;
 }
 
-#park, #club, #dungeon, #rating, #checkbox, button, .button {
+#park, #club, #dungeon, #rating, #checkbox, .save-button, .delete-button {
   cursor: pointer;
 }
 
-#delete-all {
-  margin-bottom: 1.2em;
+select, option, input {
+  font-family: 'Quicksand', sans-serif;
+}
+label {
+  margin-bottom: 0.2em;
 }
 
-.form-wrapper {
-  display: flex;
-  flex-direction: column;
-}
+/* The List And Items */
 
 #djmon-list {
 margin-top: 0.5em;
@@ -93,12 +104,6 @@ background-color: rgba(251,236,251,0.9);
 border-radius: 0.5em;
 min-height: 355px;
 border: 0.05em solid #C9A9C8;
-}
-
-.list-body{
-  background-color: rgba(251,236,251,0.5);
-  border-radius: 0.5em;
-  margin-top: 0.5em;
 }
 
 .djmon-list-item {
@@ -128,12 +133,25 @@ border: 0.05em solid #C9A9C8;
   background-color: #BD98BC;
 }
 
-.not-seen-it {
-  visibility: hidden;
+.list-body{
+  background-color: rgba(251,236,251,0.5);
+  border-radius: 0.5em;
+  margin-top: 0.5em;
 }
 
-.hidden {
-  display: none;
+.djmon-body-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.bold {
+  border: 0.05em solid #C9A9C8;
+  border-radius: 0.5em;
+  padding: 0.1em;
+}
+
+.not-seen-it {
+  visibility: hidden;
 }
 
 .seen-it {
@@ -143,16 +161,9 @@ border: 0.05em solid #C9A9C8;
   text-shadow: 3px 4px 5px #634963;
 }
 
-.test {
-  display: flex;
-}
+/* Buttons */
 
-.djmon-body-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.save-button, .button-delete {
+.save-button, .delete-button {
   border: 0.1em solid #C9A9C8;
   border-radius: 0.5em;
   color: #634963;
@@ -164,13 +175,13 @@ border: 0.05em solid #C9A9C8;
   margin-top: 0.5em;
 }
 
-.save-button:active, .button-delete:active {
+.save-button:active, .delete-button:active {
   transform: translateY(0.15em);
   box-shadow: 0 0 #634963;
   font-family: 'Quicksand', sans-serif;
 }
 
-.save-button:hover, .button-delete:hover {
+.save-button:hover, .delete-button:hover {
   font-family: 'Quicksand', sans-serif;
   background-color: #C9A9C8;
 }
@@ -178,8 +189,14 @@ border: 0.05em solid #C9A9C8;
   margin-bottom: 0.2em;
 }
 
-select, option, input {
-  font-family: 'Quicksand', sans-serif;
+#delete-all {
+  margin-bottom: 1.2em;
+}
+
+/* Search Properties */
+
+.hidden {
+  display: none;
 }
 
 /* only displays when mobile mode */
@@ -208,9 +225,11 @@ nav {
     align-items: center;
 
   }
+
   #new-djmon-form {
     display: none;
   }
+
   #new-djmon-form-show {
     display: flex;
     flex-direction: column;
@@ -224,4 +243,5 @@ nav {
   #open-form {
     display: flex;
   }
+
 }
