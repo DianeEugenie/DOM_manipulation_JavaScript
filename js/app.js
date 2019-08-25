@@ -139,29 +139,7 @@ const sortSite = function(event) {
   const selection = event.target.value;
   const list = document.querySelector('#djmon-list');
   const allItems = document.querySelector('#djmon-list').children;
-  console.dir(allItems);
-  // [].slice.call(allItems).sort
-  // const newArray = [].list.slice(0, list.length)
 
-  // console.dir(newArray);
-//FOUND ONLINE
-//   window.onload = function() {
-//   var parentNode = document.getElementById('test-list');
-//   var e = document.getElementById('test-list').children;
-//   [].slice.call(e).sort(function(a, b) {
-//   	if (a.textContent > b.textContent) return 1;
-//   if (a.textContent < b.textContent) return -1;
-//   return 0;
-//    }).forEach(function(val) {
-//     parentNode.appendChild(val);
-//   });
-// }
-  // console.dir(this[1].value);
-
-  // for (var i = 0; i < list.length; i++) {
-  //   list[i]
-  // console.dir(list[0]);
-  //
   //
   switch (selection) {
     case this[1].value:
@@ -193,8 +171,18 @@ const sortSite = function(event) {
 
     case this[3].value:
       const thirdSort = [].slice.call(allItems).sort((item1, item2) => {
-        return parseInt(item1.children[1].children[6].textContent.slice(-1)) - parseInt(item2.children[1].children[6].textContent.slice(-1))
-      });
+        return parseInt(item2.children[1].children[6].textContent.slice(-2)) - parseInt(item1.children[1].children[6].textContent.slice(-2))
+      }).map(item => list.appendChild(item));
+
+    break;
+
+    case this[4].value:
+
+      const fourthSort = [].slice.call(allItems).sort((item1, item2) => {
+        return parseInt(item1.children[1].children[6].textContent.slice(-2)) - parseInt(item2.children[1].children[6].textContent.slice(-2))
+      }).map(item =>list.appendChild(item));
+
+
 
     break;
   };
