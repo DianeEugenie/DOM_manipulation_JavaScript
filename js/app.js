@@ -82,7 +82,7 @@ const createNewDJmon = function (form) {
   seenCheckBox.type ='checkbox';
   seenCheckBox.id = 'checkbox';
 
-  const labelCheckBox = addNewElement('label', `Got the T-Shirt!`);
+  const labelCheckBox = addNewElement('label', `Gotcha!`);
   labelCheckBox.classList.add('not-seen-it');
 // add event listener to the checkbox
   seenCheckBox.addEventListener('change', handleCheckBox);
@@ -189,9 +189,3 @@ const handleOpenForm = function(event) {
     event.target.innerText = 'Open DJ-mon Form';
   }
 };
-
-
-
-
-
-// console.dir(parseInt(allItems[0].children[1].children[1].innerText.slice(-1))); - to get rating of technical skills
