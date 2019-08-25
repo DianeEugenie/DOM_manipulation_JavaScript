@@ -75,7 +75,7 @@ p {
   margin-bottom: 1.2em;
 }
 
-#form-wrapper {
+.form-wrapper {
   display: flex;
   flex-direction: column;
 }

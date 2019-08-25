@@ -20,7 +20,7 @@
   <main>
 
   <form id="new-djmon-form">
-    <div id="form-wrapper">
+    <div class="form-wrapper">
       <div class="form-item">
         <label for="name">Name:</label>
         <input type="text" id="name" required />
@@ -83,9 +83,24 @@
   </form>
 
   <form id="search-djmon">
-    <label for="site-search">I'm Looking For:</label>
-    <input type="text" id="site-search" placeholder="Something..."
-    aria-label="Search the site">
+    <div class="form-wrapper">
+      <div class="form-item">
+        <label for="site-search">I'm Looking For:</label>
+        <input type="text" id="site-search" placeholder="Something..."
+        aria-label="Search the site">
+      </div>
+
+      <div class="form-item">
+        <label for="site-sorter">Sort The DJ-mons</label>
+        <select id="site-sorter" required>
+          <option disabled selected>Please Select From The Below</option>
+          <option value="A to Z">From A to Z</option>
+          <option value="Z to A">From Z to A</option>
+          <option value="Total Rating">Rating: Best to Worst</option>
+        </select>
+      </div>
+      <!-- <p id="select-result">No choice has been made.</p> -->
+    </div>
   </form>
 
 

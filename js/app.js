@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.querySelector('#site-search');
   searchBar.addEventListener('input', searchSite);
 
+  const listSorter = document.querySelector('#site-sorter');
+  listSorter.addEventListener('change', sortSite);
+
   const openForm = document.querySelector('#open-form');
   openForm.addEventListener('click', handleOpenForm);
 
@@ -113,13 +116,11 @@ const handleEmptyList = function (event) {
 // attempt at search function
 const searchSite = function(event) {
   // get the value that is being typed in
-  let input = document.querySelector('#site-search');
+  const input = document.querySelector('#site-search');
   const filter = input.value.toLowerCase();
-  // get the list
-  const list = document.querySelector('#djmon-list');
-  // get item of the list
-  const allItems = list.children;
-  // get all djmon list items
+  // get the list array
+  const allItems = document.querySelector('#djmon-list').children;
+
   for (let i = 0; i < allItems.length; i++) {
     // let item = allItems[i];
     //access text of the list item
@@ -131,6 +132,77 @@ const searchSite = function(event) {
       allItems[i].classList.add('hidden');
     };
   };
+};
+
+// attempt at sort site function
+const sortSite = function(event) {
+  const selection = event.target.value;
+  const list = document.querySelector('#djmon-list');
+  const allItems = document.querySelector('#djmon-list').children;
+
+  // [].slice.call(allItems).sort
+  // const newArray = [].list.slice(0, list.length)
+
+  // console.dir(newArray);
+//FOUND ONLINE
+//   window.onload = function() {
+//   var parentNode = document.getElementById('test-list');
+//   var e = document.getElementById('test-list').children;
+//   [].slice.call(e).sort(function(a, b) {
+//   	if (a.textContent > b.textContent) return 1;
+//   if (a.textContent < b.textContent) return -1;
+//   return 0;
+//    }).forEach(function(val) {
+//     parentNode.appendChild(val);
+//   });
+// }
+  // console.dir(this[1].value);
+
+  // for (var i = 0; i < list.length; i++) {
+  //   list[i]
+  // console.dir(list[0]);
+  //
+  //
+  switch (selection) {
+    case this[1].value:
+    //html collection not seen as a real array - found function on stackoverflow that uses slice.call.sort in order to turn collection into a real array
+      const firstSort = [].slice.call(allItems).sort((item1, item2) => {
+      // THE BELOW WORKS!!
+        if (item1.children[0].textContent > item2.children[0].textContent) return 1;
+        if (item1.children[0].textContent < item2.children[0].textContent) return -1;
+        return 0}).map((item) => {
+          return list.appendChild(item);
+      });
+
+      // const firstSort = [].slice.call(allItems).sort((item1, item2) => {
+      // // THE BELOW DOESNT WORK!!
+      // return item1.children[0].textContent - item2.children[0].textContent}).forEach((item) => {
+      //     list.appendChild(item);
+      // });
+
+        // return item1.children[0].textContent - item2.children[0].textContent;
+
+    break;
+
+    case this[2].value:
+      const secondSort = [].slice.call(allItems).sort((item1, item2) => {
+        return item2.children[0].textContent - item1.children[0].textContent;
+      }).map(item => list.appendChild(item));
+
+      return secondSort;
+    break;
+
+    case this[3].value:
+      const thirdSort = list.sort((item1, item2) => {
+        return item2.children[0].textContent - item1.children[0].textContent
+      });
+
+      return thirdSort;
+    break;
+  };
+
+
+
 };
 
 
