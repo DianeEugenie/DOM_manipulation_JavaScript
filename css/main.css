@@ -32,7 +32,12 @@ h1 {
   background-color: rgba(251,236,251,0.9);
   border-radius: 0.5em;
   font-size: 2.5em;
+}
 
+h2 {
+  border: 0.2em double #8E658E;
+  border-radius: 0.5em;
+  text-align: center;
 }
 
 
@@ -77,12 +82,14 @@ p {
 
 #djmon-list {
 margin-top: 0.5em;
+padding: 0.5em 0;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
 flex-wrap: wrap;
 background-color: rgba(251,236,251,0.9);
 border-radius: 0.5em;
+min-height: 355px;
 }
 
 .djmon-list-item {
