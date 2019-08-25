@@ -170,9 +170,8 @@ const sortSite = function(event) {
       // THE BELOW WORKS!!
         if (item1.children[0].textContent > item2.children[0].textContent) return 1;
         if (item1.children[0].textContent < item2.children[0].textContent) return -1;
-        return 0}).map((item) => {
-          return list.appendChild(item);
-      });
+        return 0}).map(item => list.appendChild(item));
+
 
       // const firstSort = [].slice.call(allItems).sort((item1, item2) => {
       // // THE BELOW DOESNT WORK!!
@@ -186,10 +185,10 @@ const sortSite = function(event) {
 
     case this[2].value:
       const secondSort = [].slice.call(allItems).sort((item1, item2) => {
-        return item2.children[0].textContent - item1.children[0].textContent;
-      }).map(item => list.appendChild(item));
+        if (item1.children[0].textContent > item2.children[0].textContent) return -1;
+        if (item1.children[0].textContent < item2.children[0].textContent) return 1;
+        return 0}).map(item => list.appendChild(item));
 
-      return secondSort;
     break;
 
     case this[3].value:
