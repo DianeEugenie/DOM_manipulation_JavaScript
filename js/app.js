@@ -139,7 +139,7 @@ const sortSite = function(event) {
   const selection = event.target.value;
   const list = document.querySelector('#djmon-list');
   const allItems = document.querySelector('#djmon-list').children;
-
+  console.dir(allItems);
   // [].slice.call(allItems).sort
   // const newArray = [].list.slice(0, list.length)
 
@@ -165,7 +165,7 @@ const sortSite = function(event) {
   //
   switch (selection) {
     case this[1].value:
-    //html collection not seen as a real array - found function on stackoverflow that uses slice.call.sort in order to turn collection into a real array
+    //html collection not seen as a real array - found function on stackoverflow that uses slice.call.sort in order to turn collection into a real array & MDN also really helpful
       const firstSort = [].slice.call(allItems).sort((item1, item2) => {
       // THE BELOW WORKS!!
         if (item1.children[0].textContent > item2.children[0].textContent) return 1;
@@ -192,13 +192,13 @@ const sortSite = function(event) {
     break;
 
     case this[3].value:
-      const thirdSort = list.sort((item1, item2) => {
-        return item2.children[0].textContent - item1.children[0].textContent
+      const thirdSort = [].slice.call(allItems).sort((item1, item2) => {
+        return parseInt(item1.children[1].children[6].textContent.slice(-1)) - parseInt(item2.children[1].children[6].textContent.slice(-1))
       });
 
-      return thirdSort;
     break;
   };
+
 
 
 
