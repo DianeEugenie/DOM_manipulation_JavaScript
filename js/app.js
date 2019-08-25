@@ -134,13 +134,12 @@ const searchSite = function(event) {
   };
 };
 
-// attempt at sort site function
+// sort function that manipulates the list based on specific cases
 const sortSite = function(event) {
   const selection = event.target.value;
   const list = document.querySelector('#djmon-list');
   const allItems = document.querySelector('#djmon-list').children;
 
-  //
   switch (selection) {
     case this[1].value:
     //html collection not seen as a real array - found function on stackoverflow that uses slice.call.sort in order to turn collection into a real array & MDN also really helpful
@@ -149,15 +148,6 @@ const sortSite = function(event) {
         if (item1.children[0].textContent > item2.children[0].textContent) return 1;
         if (item1.children[0].textContent < item2.children[0].textContent) return -1;
         return 0}).map(item => list.appendChild(item));
-
-
-      // const firstSort = [].slice.call(allItems).sort((item1, item2) => {
-      // // THE BELOW DOESNT WORK!!
-      // return item1.children[0].textContent - item2.children[0].textContent}).forEach((item) => {
-      //     list.appendChild(item);
-      // });
-
-        // return item1.children[0].textContent - item2.children[0].textContent;
 
     break;
 
@@ -181,14 +171,9 @@ const sortSite = function(event) {
       const fourthSort = [].slice.call(allItems).sort((item1, item2) => {
         return parseInt(item1.children[1].children[6].textContent.slice(-2)) - parseInt(item2.children[1].children[6].textContent.slice(-2))
       }).map(item =>list.appendChild(item));
-
-
-
     break;
+
   };
-
-
-
 
 };
 

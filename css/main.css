@@ -19,6 +19,10 @@ nav {
   display: none;
 }
 
+label {
+  margin-bottom: 0.2em;
+}
+
 main {
   display: flex;
   flex-direction: row;
@@ -32,6 +36,7 @@ h1 {
   background-color: rgba(251,236,251,0.9);
   border-radius: 0.5em;
   font-size: 2.5em;
+  border: 0.025em solid #C9A9C8;
 }
 
 h2 {
@@ -90,6 +95,13 @@ flex-wrap: wrap;
 background-color: rgba(251,236,251,0.9);
 border-radius: 0.5em;
 min-height: 355px;
+border: 0.05em solid #C9A9C8;
+}
+
+.list-body{
+  background-color: rgba(251,236,251,0.5);
+  border-radius: 0.5em;
+  margin-top: 0.5em;
 }
 
 .djmon-list-item {
@@ -142,7 +154,7 @@ min-height: 355px;
   flex-direction: column;
 }
 
-.button {
+.button, .button-delete {
   border: 0.1em solid #C9A9C8;
   border-radius: 0.5em;
   color: #634963;
@@ -154,20 +166,24 @@ min-height: 355px;
   margin-top: 0.5em;
 }
 
-.button:active, .button:active {
+.button:active, .button-delete:active {
   transform: translateY(0.15em);
   box-shadow: 0 0 #634963;
   font-family: 'Quicksand', sans-serif;
 }
 
-.button:hover, .button:hover {
+.button:hover, .button-delete:hover {
   font-family: 'Quicksand', sans-serif;
   background-color: #C9A9C8;
+}
+.button-delete {
+  align-items: center;
 }
 
 select {
   font-family: 'Quicksand', sans-serif;
 }
+
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 720px) {
 
